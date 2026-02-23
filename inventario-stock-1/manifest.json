@@ -1,0 +1,21 @@
+{
+  "short_name": "Gestión Chubut",
+  "name": "Sistema de Gestión - Secretaría de Trabajo",
+  "icons": [
+    {
+      "src": "https://yt3.googleusercontent.com/0ZFjJRm21feVBJcdWfIOcJtJQsYLzYW1hKnSGfjU8RFu2sdyjhfNeChaQ1FUtzsdxxqZb4qS=s900-c-k-c0x00ffffff-no-rj",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://yt3.googleusercontent.com/0ZFjJRm21feVBJcdWfIOcJtJQsYLzYW1hKnSGfjU8RFu2sdyjhfNeChaQ1FUtzsdxxqZb4qS=s900-c-k-c0x00ffffff-no-rj",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#004a99",
+  "display": "standalone",
+  "theme_color": "#004a99",
+  "description": "Aplicación oficial de gestión de stock de la Secretaría de Trabajo del Chubut."
+}

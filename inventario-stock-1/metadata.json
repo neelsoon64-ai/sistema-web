@@ -1,0 +1,5 @@
+{
+  "name": "Sistema Gestión Chubut - Secretaría de Trabajo",
+  "description": "Control de inventario institucional conectado a Google Sheets.",
+  "requestFramePermissions": []
+}
