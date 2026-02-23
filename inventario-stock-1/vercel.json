@@ -1,16 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
   "rewrites": [
+    {
+      "source": "/products",
+      "destination": "/api/products"
+    },
     {
       "source": "/api/(.*)",
       "destination": "server.js"
@@ -19,8 +13,5 @@
       "source": "/(.*)",
       "destination": "/dist/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
