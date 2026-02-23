@@ -3,4 +3,5 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://ktfllumgrizxopjwdsyd.supabase.co'
 const supabaseKey = 'sb_publishable_htsd7QvRFf6cghKKbivZVA_Pnpnjp6J' // Pega la clave larga de tu imagen
 
+
 export const supabase = createClient(supabaseUrl, supabaseKey)
