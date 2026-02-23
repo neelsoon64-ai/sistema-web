@@ -1,19 +1,27 @@
-// 1. Importamos el cliente de Vercel
-const { db } = require('@vercel/postgres');
+// 1. Importamos el cliente de Supabase
+const { createClient } = require('@supabase/supabase-js');
 
+// 2. Configuramos la conexi√≥n con las variables de entorno que pusiste en Vercel
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// 3. Funci√≥n para obtener los productos del inventario
 async function ejecutarConsulta() {
-  // 2. Nos conectamos usando las variables de entorno autom·ticas
-  const client = await db.connect();
-  
   try {
-    // 3. Ejemplo de consulta (Cambia 'usuarios' por el nombre de tu tabla)
-    const result = await client.sql`SELECT * FROM usuarios;`;
-    console.log("Datos recuperados:", result.rows);
-    return result.rows;
+    // Consultamos la tabla 'productos' que acabamos de crear en Supabase
+    const { data, error } = await supabase
+      .from('productos')
+      .select('*');
+
+    if (error) {
+      throw error;
+    }
+
+    console.log("Datos recuperados de Supabase:", data);
+    return data; // Estos son los productos que se mostrar√°n en tu tabla
   } catch (error) {
-    console.error("Error en la base de datos:", error);
-  } finally {
-    // 4. Siempre cerramos la conexiÛn
-    client.release();
+    console.error("Error conectando con Supabase:", error.message);
+    return [];
   }
 }
